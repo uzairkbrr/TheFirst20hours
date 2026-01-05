@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: 20hours-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/sql_app.db:/app/sql_app.db # Persist SQLite DB
+    environment:
+      - SECRET_KEY=change_this_secret_in_production
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: 20hours-frontend
+    ports:
+      - "3000:80" # Map host port 3000 to container port 80 (nginx)
+    depends_on:
+      - backend
+    restart: always
+
+# Define volumes if needed, but for simple file mapping above is enough for sqlite
