@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "First 20 Hours - Focus Helper",
+    "version": "1.0",
+    "description": "Stay focused on your 20-hour skill journey by blocking distractions during sessions.",
+    "permissions": [
+        "storage",
+        "declarativeNetRequest"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    }
+}

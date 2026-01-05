@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First 20 Hours</title>
+    <style>
+        body { width: 300px; padding: 20px; font-family: sans-serif; }
+        h1 { font-size: 18px; margin-bottom: 10px; }
+        button { background: black; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Focus Helper</h1>
+    <p>Block distractions during your practice sessions.</p>
+    <button>Open App</button>
+    <script>
+        document.querySelector('button').addEventListener('click', () => {
+            chrome.tabs.create({ url: 'http://localhost:5173' });
+        });
+    </script>
+</body>
+</html>
